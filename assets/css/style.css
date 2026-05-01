@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+p {
+    max-width: 800px;
+    margin: 15px auto;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+table:first-of-type {
+    margin: 20px auto;
+    background: #1e3a8a;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+}
+
+table:first-of-type td {
+    border: none;
+    padding: 12px 18px;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table:first-of-type a {
+    color: white;
+}
+
+a:hover {
+    color: #facc15;
+}
+
+img {
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.table-wrapper table tr {
+    background: white;
+}
+
+.table-wrapper table tr:nth-child(even) {
+    background: #f1f5f9;
+}
+
+.table-wrapper table tr:first-child,
+.table-wrapper table tr:nth-child(2) {
+    background: #2563eb;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+form {
+    max-width: 650px;
+    margin: 20px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+form table {
+    width: 100%;
+    margin: 0;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+input[type="color"],
+input[type="file"] {
+    width: auto;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+center,
+.Center {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    table:first-of-type tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    form {
+        padding: 15px;
+    }
+}
+
+.table-wrapper {
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.table-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.table-wrapper table {
+    margin: 0;
+}
+
+.table-wrapper table.tabel-latihan tr,
+.table-wrapper table.tabel-latihan tr:nth-child(even),
+.table-wrapper table.tabel-latihan tr:first-child,
+.table-wrapper table.tabel-latihan tr:nth-child(2) {
+    background: white;
+    color: #1f2937;
+}
