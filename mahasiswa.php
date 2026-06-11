@@ -15,16 +15,16 @@
     <table border="1" align="center" cellspacing="5px" cellpadding="10px">
         <tr>
             <td>
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </td>
             <td>
-                <a href="profil.html">Profile</a>
+                <a href="profil.php">Profile</a>
             </td>
             <td>
-                <a href="keterangan.html">Keterangan</a>
+                <a href="keterangan.php">Keterangan</a>
             </td>
             <td>
-                <a href="mahasiswa.html">Data Mahasiswa</a>
+                <a href="mahasiswa.php">Data Mahasiswa</a>
             </td>
         </tr>
     </table>
@@ -34,42 +34,48 @@
     </h2>
     <div class="table-wrapper">
         <div class="table-header">
-            <a href="tambahdata.html">
+            <a href="tambahdata.php">
                 <button class="btn">tambah data</button>
             </a>
         </div>
         <table align="center" border="1" cellpadding="5px">
             <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Nama</th>
-                <th rowspan="2">NIM</th>
-                <th rowspan="2">Foto</th>
-                <th colspan="3">Nilai</th>
-                <!-- <td>Baris 1, Kolom 3</td> -->
+                <th>No</th>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Jurusan</th>
+                <th>Email</th>
+                <th>No. HP</th>
+                <th>Foto</th>
+                <th>Aksi</th>
             </tr>
-            <tr>
-                <th>UTS</th>
-                <th>UAS</th>
-                <th>Tugas</th>
-                <!-- <td>Baris 2, Kolom 3</td> -->
-            </tr>
+
             <tr>
                 <td align="center">1</td>
                 <td>zulkadir</td>
                 <td>1324527387</td>
+                <td align="center">Teknologi Informasi</td>
+                <td align="center">zulkadirtinggi564@gmail.com</td>
+                <td align="center">08123456789</td>
                 <td><img src="assets/images/zul.jpg" alt="Foto zul" width="80px"></td>
-                <td align="center">90</td>
-                <td align="center">95</td>
-                <td align="center">90</td>
+                <td>
+                    <a href="editdata.php"><button class="btn">Edit</button></a>
+                    <a href="hapusdata.php"><button class="btn">Hapus</button></a>
+                </td>
+
             </tr>
             <tr>
                 <td align="center">2</td>
                 <td>Rusdi</td>
                 <td>1324527388</td>
+                <td align="center">Sistem Informasi</td>
+                <td align="center">rusdigantenk123@gmail.com</td>
+                <td align="center">08123456780</td>
                 <td><img src="assets/images/akuyorushika.jpg" alt="Foto rusdi" width="80px"></td>
-                <td align="center">85</td>
-                <td align="center">90</td>
-                <td align="center">88</td>
+                <td>
+                    <a href="editdata.php"><button class="btn">Edit</button></a>
+                    <a href="deletedata.php"><button class="btn">Hapus</button></a>
+                </td>
             </tr>
         </table>
         <hr>
