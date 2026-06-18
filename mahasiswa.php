@@ -1,3 +1,29 @@
+<?php
+
+// API
+$koneksi = mysqli_connect("localhost", "root", "", "surweekly");
+
+$query = "SELECT * FROM mahasiswa";
+
+mysqli_query($koneksi, $query);
+$result = mysqli_query($koneksi, $query);
+
+// isi data
+// while ($mhs = mysqli_fetch_assoc($result)) {
+//     var_dump($mhs);
+// }
+
+
+/// ambil data (fetch) dari object result
+/// mysqli_fetch_row() // mengembalikan array numerik
+/// mysqli_fetch_assoc() // mengembalikan array asosiatif
+/// mysqli_fetch_array() // mengembalikan array numerik dan asosiatif
+/// mysqli_fetch_object() // mengembalikan object
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,20 +76,26 @@
                 <th>Aksi</th>
             </tr>
 
-            <tr>
-                <td align="center">1</td>
-                <td>zulkadir</td>
-                <td>1324527387</td>
-                <td align="center">Teknologi Informasi</td>
-                <td align="center">zulkadirtinggi564@gmail.com</td>
-                <td align="center">08123456789</td>
-                <td><img src="assets/images/zul.jpg" alt="Foto zul" width="80px"></td>
-                <td>
-                    <a href="editdata.php"><button class="btn">Edit</button></a>
-                    <a href="hapusdata.php"><button class="btn">Hapus</button></a>
-                </td>
+            <?php
+            while ($mhs = mysqli_fetch_assoc($result)) {
+            ?>
+                <tr>
+                    <td align="center">1</td>
+                    <td> <?php echo $mhs['nama']; ?></td>
+                    <td> <?php echo $mhs['nim']; ?></td>
+                    <td align="center"> <?php echo $mhs['jurusan']; ?></td>
+                    <td align="center"> <?php echo $mhs['email']; ?></td>
+                    <td align="center"> <?php echo $mhs['no_hp']; ?></td>
+                    <td><img src="assets/images/<?php echo $mhs['foto']; ?>" alt="Foto <?php echo $mhs['nama']; ?>" width="80px"></td>
+                    <td>
+                        <a href="editdata.php"><button class="btn">Edit</button></a>
+                        <a href="hapusdata.php"><button class="btn">Hapus</button></a>
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
 
-            </tr>
             <tr>
                 <td align="center">2</td>
                 <td>Rusdi</td>
