@@ -80,7 +80,7 @@ $result = mysqli_query($koneksi, $query);
             while ($mhs = mysqli_fetch_assoc($result)) {
             ?>
                 <tr>
-                    <td align="center">1</td>
+                    <td align="center"><?php echo $mhs['id']; ?></td>
                     <td> <?php echo $mhs['nama']; ?></td>
                     <td> <?php echo $mhs['nim']; ?></td>
                     <td align="center"> <?php echo $mhs['jurusan']; ?></td>
@@ -95,20 +95,6 @@ $result = mysqli_query($koneksi, $query);
             <?php
             }
             ?>
-
-            <tr>
-                <td align="center">2</td>
-                <td>Rusdi</td>
-                <td>1324527388</td>
-                <td align="center">Sistem Informasi</td>
-                <td align="center">rusdigantenk123@gmail.com</td>
-                <td align="center">08123456780</td>
-                <td><img src="assets/images/akuyorushika.jpg" alt="Foto rusdi" width="80px"></td>
-                <td>
-                    <a href="editdata.php"><button class="btn">Edit</button></a>
-                    <a href="deletedata.php"><button class="btn">Hapus</button></a>
-                </td>
-            </tr>
         </table>
         <hr>
         <h2 align="center">Latihan</h2>
