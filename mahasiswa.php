@@ -1,12 +1,9 @@
 <?php
 
 // API
-$koneksi = mysqli_connect("localhost", "root", "", "surweekly");
-
-$query = "SELECT * FROM mahasiswa";
-
-mysqli_query($koneksi, $query);
-$result = mysqli_query($koneksi, $query);
+require 'fungsi.php';
+$query = "SELECT * FROM mahasiswa";  /// perintah untuk menampilkan semua data dari tabel mahasiswa
+$mahasiswas = tampildata($query); /// wadah berisi data dari query yang diambil dari tabel mahasiswa
 
 // isi data
 // while ($mhs = mysqli_fetch_assoc($result)) {
@@ -21,7 +18,6 @@ $result = mysqli_query($koneksi, $query);
 /// mysqli_fetch_object() // mengembalikan object
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -77,10 +73,11 @@ $result = mysqli_query($koneksi, $query);
             </tr>
 
             <?php
-            while ($mhs = mysqli_fetch_assoc($result)) {
+            $no = 1;
+            foreach ($mahasiswas as $mhs) {
             ?>
                 <tr>
-                    <td align="center"><?php echo $mhs['id']; ?></td>
+                    <td align="center"><?php echo $no; ?></td>
                     <td> <?php echo $mhs['nama']; ?></td>
                     <td> <?php echo $mhs['nim']; ?></td>
                     <td align="center"> <?php echo $mhs['jurusan']; ?></td>
@@ -88,11 +85,12 @@ $result = mysqli_query($koneksi, $query);
                     <td align="center"> <?php echo $mhs['no_hp']; ?></td>
                     <td><img src="assets/images/<?php echo $mhs['foto']; ?>" alt="Foto <?php echo $mhs['nama']; ?>" width="80px"></td>
                     <td>
-                        <a href="editdata.php"><button class="btn">Edit</button></a>
-                        <a href="hapusdata.php"><button class="btn">Hapus</button></a>
+                        <a href="editdata.php?id=<?php echo $mhs['id']; ?>"><button class="btn">Edit</button></a>
+                        <a href="hapusdata.php?id=<?php echo $mhs['id']; ?>"><button class="btn">Hapus</button></a>
                     </td>
                 </tr>
             <?php
+                $no++;
             }
             ?>
         </table>
