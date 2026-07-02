@@ -2,18 +2,7 @@
 require 'fungsi.php';
 
 if (isset($_POST['kirim'])) {
-    $nama = $_POST['nama'];
-    $nim = $_POST['nim'];
-    $jurusan = $_POST['jurusan'];
-    $email = $_POST['email'];
-    $no_hp = $_POST['no_hp'];
-    $foto = $_POST['foto'];
-
-    $query = "INSERT INTO mahasiswa (nama, nim, jurusan, email, no_hp, foto) VALUES ('$nama', '$nim', '$jurusan', '$email', '$no_hp', '$foto')";
-    mysqli_query($koneksi, $query);
-    header("Location: mahasiswa.php");
-
-    if (mysqli_affected_rows($koneksi)) { ///query ok
+    if (tambahdata($_POST, $_FILES["foto"]) > 0) {
         echo "<script>
                 alert('Data berhasil ditambahkan!');
                 window.location.href = 'mahasiswa.php';
@@ -69,7 +58,7 @@ if (isset($_POST['kirim'])) {
             <tr>
                 <td><label for="foto">Foto</label></td>
                 <td>:</td>
-                <td><input type="text" name="foto" id="foto"></td>
+                <td><input type="file" name="foto" id="foto"></td>
             </tr>
             <tr>
                 <td colspan="3">

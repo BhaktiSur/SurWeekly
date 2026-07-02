@@ -86,7 +86,7 @@ $mahasiswas = tampildata($query); /// wadah berisi data dari query yang diambil 
                     <td><img src="assets/images/<?php echo $mhs['foto']; ?>" alt="Foto <?php echo $mhs['nama']; ?>" width="80px"></td>
                     <td>
                         <a href="editdata.php?id=<?php echo $mhs['id']; ?>"><button class="btn">Edit</button></a>
-                        <a href="hapusdata.php?id=<?php echo $mhs['id']; ?>"><button class="btn">Hapus</button></a>
+                        <a href="deletedata.php?id=<?php echo $mhs['id']; ?>" onclick="return confirm('YAng Venerrr?????');"><button class="btn">Hapus</button></a>
                     </td>
                 </tr>
             <?php
